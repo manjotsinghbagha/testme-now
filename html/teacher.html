@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+<!-- title to be give -->
+{% endblock %}
+
+
+{% block home %}
+<!-- remove un to activate  -->  
+unactive
+{% endblock %}
+
+
+{% block login %}
+<!-- remove un to activate  -->  
+unactive
+{% endblock %}
+
+
+{% block content %}
+
+<!-- content to be given laler -->
+
+{{allert}}
+
+<div class="container">
+    <div class="jumbotron" >
+        <h1>Welcome! {{name}}</h1>
+        <p class="lead"> </p>
+        <hr class="my-4">
+        <p>Click below to start test.</p>
+        <a class="btn btn-outline-light btn-lg" href="creat_test" role="button" style="background-color:  rgb(92, 92, 92);">Create Question Paper</a>
+        <a class="btn btn-outline-light btn-lg" href="check" role="button" style="background-color:  rgb(92, 92, 92);">Check Answer Given</a>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+<!-- title to be give -->
+{% endblock %}
+
+
+{% block home %}
+<!-- remove un to activate  -->  
+unactive 
+{% endblock %}
+
+
+{% block login %}
+<!-- remove un to activate  -->  
+active
+{% endblock %}
+
+{% block head %}
+<!-- content for head -->
+
+<script type="text/javascript" >
+
+    function preventBack(){window.history.forward();}
+    
+    setTimeout("preventBack()", 0);
+    
+    window.onunload=function(){null};
+    
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- content to be given laler -->
+<style>
+#login .container #login-row #login-column #login-box {
+        margin-top: 120px;
+        max-width: 600px;
+        height: 520px; 
+        border: 1px solid rgb(53, 53, 53);
+        background-color: hsla(210, 10%, 23%, 0.603);
+      }
+</style>
+<div id="login">
+    <style>.row {margin-top: -50px;}.form-control:focus{box-shadow: none; -webkit-box-shadow: none; border: whitesmoke;}</style>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="login" method="post">
+                            {% csrf_token %}
+                        <h3 class="text-center man ">Login</h3>
+                        <div class="form-group">
+                            <label for="rollno" class="man">Roll Number:</label><br>
+                            <input type="text" name="rollno" id="rollno" class="form-control" placeholder="12345678" required>
+                            <label for="rollno" class="man">{{rol}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="man">User Name:</label><br>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="username" required>
+                            <label for="username" class="man">{{usr}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="man">Password:</label><br>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                            <label for="password" class="man">{{pas}}</label>
+                        </div>
+                        <div class="form-group">
+                            <input id="man" type="submit" name="submit" class="btn btn-outline-light"  value="submit" data-toggle="tooltip" data-placement="top" title="Click To Start">
+                        </div>
+                        
+                    </form>
+                    <div > 
+                        <form action='teacher_login' >
+                            <p> <button id='man' type="submit" class="btn btn-outline-light">To Login  as Teacher click Here </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

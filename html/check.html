@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+<!-- title to be give -->
+{% endblock %}
+
+
+{% block home %}
+<!-- remove un to activate  -->  
+unactive
+{% endblock %}
+
+
+{% block login %}
+<!-- remove un to activate  -->  
+unactive
+{% endblock %}
+
+
+{% block content %}
+
+<!-- content to be given laler -->
+
+{{allert}}
+
+<div class="container man">
+    <div class="jumbotron" >
+        <h2>Give Key Of Question Paper!</h2>
+        <p class="lead">      
+            <form id="login-form" class="form" action="check" method="post">
+            {% csrf_token %}
+            <input type="text" name="key" id="key" class="form-control" placeholder="key" required> 
+            <p> <br><input class="btn btn-outline-light btn-md" type="submit" role="button" value='Search' style="background-color:  rgb(92, 92, 92);" > </p>
+        </p>
+            <p>Results</p>
+            <hr class="my-4">
+            <div class='container'>
+            <hr class="my-4">
+            {% if res %}
+            {% for data in res %}
+
+                <table boder='0px' class="table table-striped table-bordered" style='color: white'>
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">username</th>
+                        <th scope="col">{{ data.username }}</th>
+                        </tr>
+                    </thead>
+                <tr>
+                    <th>Rollno</th>
+                    <td>{{ data.rollno }}</td>
+                </tr>
+                <tr>
+                    <th>Answer 1</th>
+                    <td>{{ data.ans_1 }}</td>
+                </tr>
+                <tr>
+                    <th>Answer 2</th>
+                    <td>{{ data.ans_2 }}</td>
+                </tr>
+                <tr>
+                    <th>Answer 3</th>
+                    <td>{{ data.ans_3 }}</td>
+                </tr>
+                <tr>
+                    <th>Answer 4</th>
+                    <td>{{ data.ans_4 }}</td>
+                </tr>
+                <tr>
+                    <th>Answer 5</th>
+                    <td>{{ data.ans_5 }}</td>
+                </tr>
+                    <tr>
+                    <th>Answer 6</th>
+                    <td>{{ data.ans_6 }}</td>
+                </tr>
+                        <tr>
+                    <th>Answer 7</th>
+                    <td>{{ data.ans_7 }}</td>
+                </tr>
+                    <tr>
+                    <th>Answer 8</th>
+                    <td>{{ data.ans_8 }}</td>
+                </tr>
+                    <tr>
+                    <th>Answer 9</th>
+                    <td>{{ data.ans_9 }}</td>
+                </tr>
+                    <tr>
+                    <th>Answer 10</th>
+                    <td>{{ data.ans_10 }}</td>
+                </tr>
+                </table>
+                <hr class="my-4">
+            {% endfor %}
+            {% endif %}
+            </div>
+            <hr style="height:4px;border-width:0;color:black;background-color:black">
+    </div>
+</div>
+
+{% endblock %}

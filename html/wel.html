@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+<!-- title to be give -->
+{% endblock %}
+
+
+{% block home %}
+<!-- remove un to activate  -->  
+active
+{% endblock %}
+
+
+{% block login %}
+<!-- remove un to activate  -->  
+unactive
+{% endblock %}
+
+
+{% block content %}
+
+<!-- content to be given laler -->
+
+<div class="alert alert-warning alert-dismissible fade show container " role="alert">
+  <strong>    You are successfully registered now .</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button> 
+</div>
+
+<div class="container">
+    <div class="jumbotron" >
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet alias eaque fugit, ad sequi beatae, reiciendis delectus deserunt in voluptatibus velit commodi ipsa totam? A deserunt dolorum provident quaerat ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere in, ut molestias fugit laboriosam quibusdam quidem laborum incidunt magni ipsa nulla impedit. Obcaecati sapiente nihil, porro dolorum quaerat sit labore.</p>
+        <hr class="my-4">
+        <p>Click below to start test.</p>
+        <a class="btn btn-outline-light btn-lg" href="login" role="button" style="background-color:  rgb(92, 92, 92);">Start</a>
+    </div>
+</div>
+
+{% endblock %}

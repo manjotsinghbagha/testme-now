@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+
+{% block title %}
+<!-- title to be give -->
+{% endblock %}
+
+
+{% block home %}
+<!-- remove un to activate   -->  
+unactive
+{% endblock %}
+
+
+{% block login %}
+<!-- remove un to activate   -->  
+unactive
+{% endblock %}
+
+
+{% block head %} 
+
+<!-- content for head  -->
+<script type="text/javascript" >
+
+  function preventBack(){window.history.forward();}
+  
+  setTimeout("preventBack()", 0);
+  
+  window.onunload=function(){null};
+  
+</script>
+{% endblock %}
+
+
+
+
+{% block content %}
+<style>.isDisabled {  pointer-events: none;}</style>
+
+
+
+<!-- content to be given laler -->
+
+
+<div class="alert alert-warning alert-dismissible fade show container " role="alert">
+  <strong>Test Start's Now</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button> 
+</div>
+
+
+
+<style>.container{ align-content: center; }.editor{background-color:  rgb(131, 131, 131);padding: 2em; border-radius: 1em;margin-top: 1em;margin-bottom: 1em;}</style>
+ 
+<form class="container editor man form" action="test" method="post">
+  {% csrf_token %}
+  {% if tes %}
+  {% for data in tes %}
+  <div class="form-group ">
+    <div class="form-group custom-control-inline">
+       <label for="rollno" class="man" class="col-4">Roll Number:</label>
+       <input type="text" name="rollno" id="rollno" class="form-control" placeholder="12345678" class="col-6" required>
+       <label for="rollno" class="man">{{rol}}</label>
+    </div>
+    <div class="form-group  custom-control-inline">
+        <label for="username" class="man" class="col-4">User Name:</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="username" class="col-6" required>
+        <label for="username" class="man">{{usr}}</label>
+    </div>
+        <div class="form-group  custom-control-inline">
+        <label for="key" class="man" class="col-4">Password:</label>
+        <input type="password" name="key" id="key" class="form-control" placeholder="key" class="col-6" required>
+        <label for="key" class="man">{{usr}}</label>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_1 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_1" id="radio_0" type="radio" class="custom-control-input" value="{{ data.q_1_opt_1 }}"  required="required"> 
+        <label for="radio_0" class="custom-control-label">{{ data.q_1_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_1" id="radio_1" type="radio" class="custom-control-input" value="{{ data.q_1_opt_2 }}"  required="required"> 
+        <label for="radio_1" class="custom-control-label">{{ data.q_1_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_1" id="radio_2" type="radio" class="custom-control-input" value="{{ data.q_1_opt_3 }}"  required="required"> 
+        <label for="radio_2" class="custom-control-label">{{ data.q_1_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_1" id="radio_3" type="radio" class="custom-control-input" value="{{ data.q_1_opt_4 }}"  required="required"> 
+        <label for="radio_3" class="custom-control-label">{{ data.q_1_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_2 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_2" id="radio1_0" type="radio" class="custom-control-input" value="{{ data.q_2_opt_1 }}"  required="required" > 
+        <label for="radio1_0" class="custom-control-label">{{ data.q_2_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_2" id="radio1_1" type="radio" class="custom-control-input" value="{{ data.q_2_opt_2 }}"  required="required"> 
+        <label for="radio1_1" class="custom-control-label">{{ data.q_2_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_2" id="radio1_2" type="radio" class="custom-control-input" value="{{ data.q_2_opt_3 }}"  required="required"> 
+        <label for="radio1_2" class="custom-control-label">{{ data.q_2_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_2" id="radio1_3" type="radio" class="custom-control-input" value="{{ data.q_2_opt_4 }}"  required="required"> 
+        <label for="radio1_3" class="custom-control-label">{{ data.q_2_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_3 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_3" id="radio2_0" type="radio" class="custom-control-input" value="{{ data.q_3_opt_1 }}"  required="required"> 
+        <label for="radio2_0" class="custom-control-label">{{ data.q_3_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_3" id="radio2_1" type="radio" class="custom-control-input" value="{{ data.q_3_opt_2 }}"  required="required"> 
+        <label for="radio2_1" class="custom-control-label">{{ data.q_3_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_3" id="radio2_2" type="radio" class="custom-control-input" value="{{ data.q_3_opt_3 }}"  required="required"> 
+        <label for="radio2_2" class="custom-control-label">{{ data.q_3_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_3" id="radio2_3" type="radio" class="custom-control-input" value="{{ data.q_3_opt_4 }}"  required="required"> 
+        <label for="radio2_3" class="custom-control-label">{{ data.q_3_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_4 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_4" id="radio3_0" type="radio" class="custom-control-input" value="{{ data.q_4_opt_1 }}"  required="required"> 
+        <label for="radio3_0" class="custom-control-label">{{ data.q_4_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_4" id="radio3_1" type="radio" class="custom-control-input" value="{{ data.q_4_opt_2 }}"  required="required"> 
+        <label for="radio3_1" class="custom-control-label">{{ data.q_4_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_4" id="radio3_2" type="radio" class="custom-control-input" value="{{ data.q_4_opt_3 }}"  required="required"> 
+        <label for="radio3_2" class="custom-control-label">{{ data.q_4_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_4" id="radio3_3" type="radio" class="custom-control-input" value="{{ data.q_4_opt_4 }}"  required="required"> 
+        <label for="radio3_3" class="custom-control-label">{{ data.q_4_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_5 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_5" id="radio4_0" type="radio" class="custom-control-input" value="{{ data.q_5_opt_1 }}"  required="required"> 
+        <label for="radio4_0" class="custom-control-label">{{ data.q_5_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_5" id="radio4_1" type="radio" class="custom-control-input" value="{{ data.q_5_opt_2 }}"  required="required"> 
+        <label for="radio4_1" class="custom-control-label">{{ data.q_5_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_5" id="radio4_2" type="radio" class="custom-control-input" value="{{ data.q_5_opt_3 }}"  required="required"> 
+        <label for="radio4_2" class="custom-control-label">{{ data.q_5_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_5" id="radio4_3" type="radio" class="custom-control-input" value="{{ data.q_5_opt_4 }}"  required="required"> 
+        <label for="radio4_3" class="custom-control-label">{{ data.q_5_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_6}}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_6" id="radio5_0" type="radio" class="custom-control-input" value="{{ data.q_6_opt_1 }}"  required="required"> 
+        <label for="radio5_0" class="custom-control-label">{{ data.q_6_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_6" id="radio5_1" type="radio" class="custom-control-input" value="{{ data.q_6_opt_2 }}"  required="required"> 
+        <label for="radio5_1" class="custom-control-label">{{ data.q_6_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_6" id="radio5_2" type="radio" class="custom-control-input" value="{{ data.q_6_opt_3 }}"  required="required"> 
+        <label for="radio5_2" class="custom-control-label">{{ data.q_6_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_6" id="radio5_3" type="radio" class="custom-control-input" value="{{ data.q_6_opt_4 }}"  required="required"> 
+        <label for="radio5_3" class="custom-control-label">{{ data.q_6_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_7 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_7" id="radio6_0" type="radio" class="custom-control-input" value="{{ data.q_7_opt_1 }}"  required="required"> 
+        <label for="radio6_0" class="custom-control-label">{{ data.q_7_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_7" id="radio6_1" type="radio" class="custom-control-input" value="{{ data.q_7_opt_2 }}"  required="required"> 
+        <label for="radio6_1" class="custom-control-label">{{ data.q_7_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_7" id="radio6_2" type="radio" class="custom-control-input" value="{{ data.q_7_opt_3 }}"  required="required"> 
+        <label for="radio6_2" class="custom-control-label">{{ data.q_7_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_7" id="radio6_3" type="radio" class="custom-control-input" value="{{ data.q_7_opt_4 }}"  required="required"> 
+        <label for="radio6_3" class="custom-control-label">{{ data.q_7_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_8 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_8" id="radio7_0" type="radio" class="custom-control-input" value="{{ data.q_8_opt_1 }}"  required="required"> 
+        <label for="radio7_0" class="custom-control-label">{{ data.q_8_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_8" id="radio7_1" type="radio" class="custom-control-input" value="{{ data.q_8_opt_2 }}"  required="required"> 
+        <label for="radio7_1" class="custom-control-label">{{ data.q_8_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_8" id="radio7_2" type="radio" class="custom-control-input" value="{{ data.q_8_opt_3 }}"  required="required"> 
+        <label for="radio7_2" class="custom-control-label">{{ data.q_8_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_8" id="radio7_3" type="radio" class="custom-control-input" value="{{ data.q_8_opt_4 }}"  required="required"> 
+        <label for="radio7_3" class="custom-control-label">{{ data.q_8_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_9 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_9" id="radio8_0" type="radio" class="custom-control-input" value="{{ data.q_9_opt_1 }}"  required="required"> 
+        <label for="radio8_0" class="custom-control-label">{{ data.q_9_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_9" id="radio8_1" type="radio" class="custom-control-input" value="{{ data.q_9_opt_2 }}"  required="required"> 
+        <label for="radio8_1" class="custom-control-label">{{ data.q_9_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_9" id="radio8_2" type="radio" class="custom-control-input" value="{{ data.q_9_opt_3 }}"  required="required"> 
+        <label for="radio8_2" class="custom-control-label">{{ data.q_9_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_9" id="radio8_3" type="radio" class="custom-control-input" value="{{ data.q_9_opt_4 }}"  required="required"> 
+        <label for="radio8_3" class="custom-control-label">{{ data.q_9_opt_4 }}</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-4">Question ~ {{ data.question_10 }}</label> 
+    <div class="col-8">
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_10" id="radio9_0" type="radio" class="custom-control-input" value="{{ data.q_10_opt_1 }}"  required="required"> 
+        <label for="radio9_0" class="custom-control-label">{{ data.q_10_opt_1 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_10" id="radio9_1" type="radio" class="custom-control-input" value="{{ data.q_10_opt_2 }}"  required="required"> 
+        <label for="radio9_1" class="custom-control-label">{{ data.q_10_opt_2 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_10" id="radio9_2" type="radio" class="custom-control-input" value="{{ data.q_10_opt_3 }}"  required="required"> 
+        <label for="radio9_2" class="custom-control-label">{{ data.q_10_opt_3 }}</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="ans_10" id="radio9_3" type="radio" class="custom-control-input" value="{{ data.q_10_opt_4 }}"  required="required"> 
+        <label for="radio9_3" class="custom-control-label">{{ data.q_10_opt_4 }}</label>
+      </div>
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-outline-light">Submit</button>
+    </div>
+  </div>
+  {% endfor %}
+ {% endif %}
+</form>
+
+
+
+
+
+{% endblock %}
