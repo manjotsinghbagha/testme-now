@@ -1,6 +1,6 @@
 # testme
 
-## Stable
+## Stable v1.0
 
 @manjotsinghbagha manjotsinghbagha released this 20 seconds ago
 
